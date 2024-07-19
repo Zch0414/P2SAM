@@ -1,34 +1,49 @@
-# [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545)
+# [Part-aware Personalized Segment Anything Model for Patient-Specific Segmentation](https://arxiv.org/abs/2403.05433)
 
-Official PyTorch implementation of **ConvNeXt**, from the following paper:
+Official PyTorch implementation of $P^{2}SAM$, from the following paper:
 
-[A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545). CVPR 2022.\
-[Zhuang Liu](https://liuzhuang13.github.io), [Hanzi Mao](https://hanzimao.me/), [Chao-Yuan Wu](https://chaoyuan.org/), [Christoph Feichtenhofer](https://feichtenhofer.github.io/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/) and [Saining Xie](https://sainingxie.com)\
-Facebook AI Research, UC Berkeley\
-[[`arXiv`](https://arxiv.org/abs/2201.03545)][[`video`](https://www.youtube.com/watch?v=QzCjXqFnWPE)]
+[Part-aware Personalized Segment Anything Model for Patient-Specific Segmentation](https://arxiv.org/abs/2403.05433).\
+Chenhui Zhao and Liyue Shen\
+University of Michigan\
+[[`arXiv`](https://arxiv.org/abs/2403.05433)]
 
 --- 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/8370623/180626875-fe958128-6102-4f01-9ca4-e3a30c3148f9.png" width=100% height=100% 
+<img src="https://github.com/Zch0414/p2sam/blob/master/figures/method_1.jpg" width=100% height=100% 
 class="center">
 </p>
 
-We propose **ConvNeXt**, a pure ConvNet model constructed entirely from standard ConvNet modules. ConvNeXt is accurate, efficient, scalable and very simple in design.
+<p align="center">
+<img src="https://github.com/Zch0414/p2sam/blob/master/figures/method_2.jpg" width=100% height=100% 
+class="center">
+</p>
 
-## Catalog
-- [x] ImageNet-1K Training Code  
-- [x] ImageNet-22K Pre-training Code  
-- [x] ImageNet-1K Fine-tuning Code  
-- [x] Downstream Transfer (Detection, Segmentation) Code
-- [x] Image Classification [\[Colab\]](https://colab.research.google.com/drive/1CBYTIZ4tBMsVL5cqu9N_-Q3TBprqsfEO?usp=sharing) and Web Demo [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/convnext)
-- [x] Fine-tune on CIFAR with Weights & Biases logging [\[Colab\]](https://colab.research.google.com/drive/1ijAxGthE9RENJJQRO17v9A7PTd1Tei9F?usp=sharing)
+We propose $P^{2}SAM$, a method to adapt a segmentation model to any new patients relying only on one-shot patient-specific data. $P^{2}SAM$ comprises a novel part-aware prompt mechanism and distribution-based retrieval approach to filter outlier prompts. These two components effectively mitigate ambiguity and enhance the robust generalization capacity.
 
-
+## Todo list
+- [x] PerSeg Demo Code
+- [ ] Fine-tuned Model and Patient-Specific Segmentation Code on 4D-Lung Dataset  
+- [ ] Fine-tuned Model and Patient-Specific Segmentation Code on CVC-ClinicDB Dataset
+- [ ] SAM Fine-tuning Code
 
 <!-- ✅ ⬜️  -->
 
-## Results and Pre-trained Models
+## Results and Fine-tuned Models (coming soon)
+### Qualitative Result on 4D-Lung and CVC-ClinicDB Datasets
+
+<p align="center">
+<img src="https://github.com/Zch0414/p2sam/blob/master/figures/result_1.jpg" width=100% height=100% 
+class="center">
+</p>
+
+### Qualitative Result on PerSeg Dataset
+
+<p align="center">
+<img src="https://github.com/Zch0414/p2sam/blob/master/figures/result_2.jpg" width=100% height=100% 
+class="center">
+</p>
+
 ### ImageNet-1K trained models
 
 | name | resolution |acc@1 | #params | FLOPs | model |
@@ -39,29 +54,6 @@ We propose **ConvNeXt**, a pure ConvNet model constructed entirely from standard
 | ConvNeXt-B | 384x384 | 85.1 | 89M | 45.0G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_384.pth) |
 | ConvNeXt-L | 224x224 | 84.3 | 198M | 34.4G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth) |
 | ConvNeXt-L | 384x384 | 85.5 | 198M | 101.0G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_384.pth) |
-
-### ImageNet-22K trained models
-
-| name | resolution |acc@1 | #params | FLOPs | 22k model | 1k model |
-|:---:|:---:|:---:|:---:| :---:| :---:|:---:|
-| ConvNeXt-T | 224x224 | 82.9 | 29M | 4.5G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_224.pth)   | [model](https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_224.pth)
-| ConvNeXt-T | 384x384 | 84.1 | 29M | 13.1G |     -          | [model](https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_384.pth)
-| ConvNeXt-S | 224x224 | 84.6 | 50M | 8.7G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_224.pth)   | [model](https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_224.pth)
-| ConvNeXt-S | 384x384 | 85.8 | 50M | 25.5G |     -          | [model](https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_384.pth)
-| ConvNeXt-B | 224x224 | 85.8 | 89M | 15.4G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth)   | [model](https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_224.pth)
-| ConvNeXt-B | 384x384 | 86.8 | 89M | 47.0G |     -          | [model](https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_384.pth)
-| ConvNeXt-L | 224x224 | 86.6 | 198M | 34.4G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth)  | [model](https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_224.pth)
-| ConvNeXt-L | 384x384 | 87.5 | 198M | 101.0G |    -         | [model](https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_384.pth)
-| ConvNeXt-XL | 224x224 | 87.0 | 350M | 60.9G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_224.pth) | [model](https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_1k_224_ema.pth)
-| ConvNeXt-XL | 384x384 | 87.8 | 350M | 179.0G |  -          | [model](https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_1k_384_ema.pth)
-
-
-### ImageNet-1K trained models (isotropic)
-| name | resolution |acc@1 | #params | FLOPs | model |
-|:---:|:---:|:---:|:---:| :---:|:---:|
-| ConvNeXt-S | 224x224 | 78.7 | 22M | 4.3G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_iso_small_1k_224_ema.pth) |
-| ConvNeXt-B | 224x224 | 82.0 | 87M | 16.9G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_iso_base_1k_224_ema.pth) |
-| ConvNeXt-L | 224x224 | 82.6 | 306M | 59.7G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_iso_large_1k_224_ema.pth) |
 
 
 ## Installation
