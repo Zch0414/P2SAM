@@ -22,9 +22,11 @@ class="center">
 We propose $P^{2}SAM$, a training-free method to adapt the segmentation model to any new patients relying only on one-shot patient-specific data. $P^{2}SAM$ comprises a novel part-aware prompt mechanism and a distribution-based retrieval approach to filter outlier prompts. These two components effectively mitigate ambiguity and enhance the robust generalization capacity.
 
 ## Todo list
-- [x] PerSeg Demo Code
-- [ ] Fine-tuned Model and Patient-Specific Segmentation Code on 4D-Lung Dataset  
-- [ ] Fine-tuned Model and Patient-Specific Segmentation Code on CVC-ClinicDB Dataset
+- [x] Personalized Segmentation code on PerSeg Dataset
+- [ ] Fine-tuned Model on NSCLC-Radiomics Dataset
+- [ ] Patient-Specific Segmentation Code on 4D-Lung Dataset
+- [ ] Fine-tuned Model on Kvasir-SEG Dataset
+- [ ] Patient-Specific Segmentation Code on CVC-ClinicDB Dataset
 - [ ] SAM Fine-tuning Code
 
 <!-- ✅ ⬜️  -->
