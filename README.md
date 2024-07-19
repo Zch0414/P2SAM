@@ -19,7 +19,7 @@ class="center">
 class="center">
 </p>
 
-We propose $P^{2}SAM$, a method to adapt a segmentation model to any new patients relying only on one-shot patient-specific data. $P^{2}SAM$ comprises a novel part-aware prompt mechanism and distribution-based retrieval approach to filter outlier prompts. These two components effectively mitigate ambiguity and enhance the robust generalization capacity.
+We propose $P^{2}SAM$, a training-free method to adapt the segmentation model to any new patients relying only on one-shot patient-specific data. $P^{2}SAM$ comprises a novel part-aware prompt mechanism and a distribution-based retrieval approach to filter outlier prompts. These two components effectively mitigate ambiguity and enhance the robust generalization capacity.
 
 ## Todo list
 - [x] PerSeg Demo Code
@@ -30,19 +30,6 @@ We propose $P^{2}SAM$, a method to adapt a segmentation model to any new patient
 <!-- ✅ ⬜️  -->
 
 ## Results and Fine-tuned Models (coming soon)
-### Qualitative Result on 4D-Lung and CVC-ClinicDB Datasets
-
-<p align="center">
-<img src="https://github.com/Zch0414/p2sam/blob/master/figures/result_1.jpg" width=100% height=100% 
-class="center">
-</p>
-
-### Qualitative Result on PerSeg Dataset
-
-<p align="center">
-<img src="https://github.com/Zch0414/p2sam/blob/master/figures/result_2.jpg" width=100% height=100% 
-class="center">
-</p>
 
 ### 4D-Lung
 
@@ -70,23 +57,42 @@ class="center">
 | SAM-L | 86.6 | 92.2 | 95.6 |
 | SAM-H | 89.3 | 95.3 | 95.7 |
 
-## Evaluation
-We give an example evaluation command for PerSeg:
+### Qualitative Result on 4D-Lung and CVC-ClinicDB Datasets
 
+<p align="center">
+<img src="https://github.com/Zch0414/p2sam/blob/master/figures/result_1.jpg" width=100% height=100% 
+class="center">
+</p>
+
+### Qualitative Result on PerSeg Dataset
+
+<p align="center">
+<img src="https://github.com/Zch0414/p2sam/blob/master/figures/result_2.jpg" width=100% height=100% 
+class="center">
+</p>
+
+## Getting Started
+### Personalized Segmentation on PerSeg
+See [PerSAM](https://github.com/ZrrSkywalker/Personalize-SAM) to prepare the PerSeg dataset and SAM model weight. We give an example command for personalized segmentation on PerSeg:
+
+First
 ```
-python main.py --model convnext_base --eval true \
---resume https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_224.pth \
---input_size 224 --drop_path 0.2 \
---data_path /path/to/imagenet-1k
+python p2sam_perseg.py --data '/data/perseg' --outdir '/p2sam_perseg' \
+--ckpt '/segment_anything_model/sam_vit_h.pth' --sam-type 'vit_h'\
+--min-num-pos 1 --max-num-pos 5 \
+```
+Then
+```
+python eval_miou_perseg.py --pred-path '/p2sam_perseg' --gt-path '/data/perseg/Annotations' \
 ```
 
 This should give 
 ```
-* Acc@1 85.820 Acc@5 97.868 loss 0.563
+* mIoU 95.6
 ```
 
-- For evaluating other model variants, change `--model`, `--resume`, `--input_size` accordingly. You can get the url to pre-trained models from the tables above. 
-- Setting model-specific `--drop_path` is not strictly required in evaluation, as the `DropPath` module in timm behaves the same during evaluation; but it is required in training. See [TRAINING.md](TRAINING.md) or our paper for the values used for different models.
+- For evaluating other model variants, change `--ckpt`, and `--sam-type` accordingly.
+- Setting `--vis` for visualization.
 
 ## Fine-tuning on Medical Datasets
 Coming soon.
