@@ -33,7 +33,7 @@ We propose $P^{2}SAM$, a training-free method to adapt the segmentation model to
 
 ## Results and Fine-tuned Models (coming soon)
 
-### 4D-Lung
+### Fine-tuned on NSCLC-Radiomics and Tested on 4D-Lung
 
 | name | direct transfer | $P^{2}SAM$ | # tuned params | model |
 |:---:|:---:|:---:|:---:|:---:|
@@ -42,7 +42,7 @@ We propose $P^{2}SAM$, a training-free method to adapt the segmentation model to
 | SAM-B tuned with LoRA | 56.10 | 64.38 | 5.5M | coming soon |
 | SAM-L tuned with LoRA | 57.83 | 67.00 | 5.9M | coming soon |
 
-### CVC-ClinicDB
+### Fine-tuned on Kvasir-SEG and Tested on CVC-ClinicDB
 
 | name | direct transfer | $P^{2}SAM$ | # tuned params | model |
 |:---:|:---:|:---:|:---:|:---:|
