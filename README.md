@@ -16,10 +16,10 @@ P<sup>2</sup>SAM incorporates a **part-aware prompt mechanism** and a **distribu
 - **Domains:** P<sup>2</sup>SAM performs effectively in both medical and natural image domains.
 
 ## Updates
-- **(2025-01-08)** Release SAM fine-tuning code and fine-tuned models.
-- **(2025-01-07)** Release P<sup>2</sup>SAM code for adaptive nsclc segmentation.
-- **(2025-01-06)** Release P<sup>2</sup>SAM code for endoscopy video segmentation.
-- **(2024-07-18)** Release P<sup>2</sup>SAM code for personalized segmentation.
+- **(2025-01)** Release SAM fine-tuning code and fine-tuned models.
+- **(2025-01)** Release P<sup>2</sup>SAM code for adaptive nsclc segmentation.
+- **(2025-01)** Release P<sup>2</sup>SAM code for endoscopy video segmentation.
+- **(2024-07)** Release P<sup>2</sup>SAM code for personalized segmentation.
 
 ## Getting Started
 - [Preparing Datasets for P<sup>2</sup>SAM](data/README.md)
