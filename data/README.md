@@ -14,8 +14,8 @@ Organize them as follows:
 ```
 data/
 ├── perseg/
-│   ├── Images/
-│   └── Annotations/
+│   ├── Annotations/ objects/ *.png
+│   └── Images/ objects/ *.jpg
 ```
 
 ### Endoscopy Datasets
@@ -25,9 +25,9 @@ data/
 data
 ├── endoscopy_org/
 │  ├── Kvasir-SEG/
-│     ├── images/ *.jpg
-│     └── masks/ *.jpg
-│  └── CVC-ClinicDB
+│  │  ├── images/ *.jpg
+│  │  └── masks/ *.jpg
+│  └──CVC-ClinicDB
 │     ├── Ground Truth/ *.tif
 │     └── Original/ *.tif
 ```
@@ -37,8 +37,8 @@ data
 data
 ├── endoscopy_pro/
 │  ├── kvasir_seg/
-│     ├── image/ *.png
-│     └── label/ *.png
+│  │  ├── image/ *.png
+│  │  └── label/ *.png
 │  └── CVC-ClinicDB
 │     ├── image/ video*/ *.png
 │     └── label/ video*/ *.png
@@ -51,9 +51,9 @@ data
 data
 ├── lung_org/
 │  ├── NSCLC-Radiomics/
-│     ├── LUNG1-001/
-│     ├── .../
-│     └── LUNG1-422/
+│  │  ├── LUNG1-001/
+│  │  ├── .../
+│  │  └── LUNG1-422/
 │  └── 4D-Lung
 │     ├── 100_HM10395/
 │     ├── .../
@@ -65,8 +65,8 @@ data
 data
 ├── lung_pro/
 │  ├── nsclc_radiomics/
-│     ├── image/ LUNG*/ *.png
-│     └── label/ LUNG*/ *.png
+│  │  ├── image/ LUNG*/ *.png
+│  │  └── label/ LUNG*/ *.png
 │  └── 4d_lung_multi_visits/
 │     ├── image/ *_HM10395/ *.png
 │     └── label/ *_HM10395/ *.png
