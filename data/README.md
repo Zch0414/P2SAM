@@ -1,22 +1,14 @@
 ## Preparing Datasets for P<sup>2</sup>SAM
 
 Download the 
-[PerSeg](https://drive.google.com/file/d/18TbrwhZtAPY5dlaoEqkPa5h08G9Rjcio/view), 
-[CVC-ClinicDB](https://polyp.grand-challenge.org/CVCClinicDB/), 
 [Kvasir-SEG](https://datasets.simula.no/kvasir-seg/), 
+[CVC-ClinicDB](https://polyp.grand-challenge.org/CVCClinicDB/), 
 [NSCLC-Radiomics](https://www.cancerimagingarchive.net/collection/nsclc-radiomics/), 
-and [4D-Lung](https://www.cancerimagingarchive.net/collection/4d-lung/) 
+[4D-Lung](https://www.cancerimagingarchive.net/collection/4d-lung/),
+and [PerSeg](https://drive.google.com/file/d/18TbrwhZtAPY5dlaoEqkPa5h08G9Rjcio/view), 
 datasets. 
 Process them with .ipynb files.
 Organize them as follows:
-
-### PerSeg
-```
-data/
-├── perseg/
-│   ├── Annotations/ objects/ *.png
-│   └── Images/ objects/ *.jpg
-```
 
 ### Endoscopy Datasets
 
@@ -70,4 +62,12 @@ data
 │  └── 4d_lung_multi_visits/
 │     ├── image/ *_HM10395/ *.png
 │     └── label/ *_HM10395/ *.png
+```
+
+### PerSeg
+```
+data/
+├── perseg/
+│   ├── Annotations/ objects/ *.png
+│   └── Images/ objects/ *.jpg
 ```
