@@ -16,16 +16,29 @@ P<sup>2</sup>SAM incorporates a **part-aware prompt mechanism** and a **distribu
 - **Domains:** P<sup>2</sup>SAM performs effectively in both medical and natural image domains.
 
 ## Updates
-- **(2025-01)** Release SAM fine-tuning code and fine-tuned models.
+- **(2025-01)** Release P<sup>2</sup>SAM's SAM fine-tuning code and fine-tuned models.
 - **(2025-01)** Release P<sup>2</sup>SAM code for adaptive nsclc segmentation.
 - **(2025-01)** Release P<sup>2</sup>SAM code for endoscopy video segmentation.
 - **(2024-07)** Release P<sup>2</sup>SAM code for personalized segmentation.
 
 ## Getting Started
-- [Preparing Datasets for P<sup>2</sup>SAM](data/README.md)
-- [Preparing Models for P<sup>2</sup>SAM](pretrained_weights/README.md)
-- [Fine-tuning SAM on Customed Dataset P<sup>2</sup>SAM](training/README.md)
-- [Test P<sup>2</sup>SAM on Out-of-Distribution Dataset](testing/README.md)
+
+Create an Python environment with:
+```
+conda env create -f environment.yaml
+```
+
+Prepare datasets with:
+- [Datasets for P<sup>2</sup>SAM](data/README.md)
+
+Download pre-trained weights with:
+- [Models for P<sup>2</sup>SAM](pretrained_weights/README.md)
+
+Fine-tune SAM with:
+- [Fine-tuning SAM on Customed Dataset](training/README.md)
+
+Test P<sup>2</sup>SAM with:
+- [Testing P<sup>2</sup>SAM on Out-of-Distribution Dataset](testing/README.md)
 
 ## Acknowledgement
 This repository is built using the 
