@@ -1,3 +1,5 @@
+### Preparing Models for P<sup>2</sup>SAM
+
 Download the model weights of 
 [SAM](https://github.com/facebookresearch/segment-anything), 
 [MedSAM](https://github.com/bowang-lab/MedSAM), 
