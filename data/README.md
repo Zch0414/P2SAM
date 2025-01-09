@@ -5,7 +5,7 @@ Download the
 [CVC-ClinicDB](https://polyp.grand-challenge.org/CVCClinicDB/), 
 [NSCLC-Radiomics](https://www.cancerimagingarchive.net/collection/nsclc-radiomics/), 
 [4D-Lung](https://www.cancerimagingarchive.net/collection/4d-lung/),
-and [PerSeg](https://drive.google.com/file/d/18TbrwhZtAPY5dlaoEqkPa5h08G9Rjcio/view), 
+and [PerSeg](https://drive.google.com/file/d/18TbrwhZtAPY5dlaoEqkPa5h08G9Rjcio/view) 
 datasets. 
 Process them with .ipynb files.
 Organize them as follows:
