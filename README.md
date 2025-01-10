@@ -34,7 +34,7 @@ Prepare datasets with:
 Prepare pre-trained and fine-tuned models with:
 - [Models](pretrained_weights/README.md)
 
-Fine-tune SAM on customed datasets with:
+Fine-tune SAM on custom datasets with:
 - [Fine-tuning](fine_tuning/README.md)
 
 Test P<sup>2</sup>SAM on out-of-distribution datasets with:
