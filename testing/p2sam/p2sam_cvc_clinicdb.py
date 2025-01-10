@@ -21,12 +21,12 @@ def get_arguments():
     parser = argparse.ArgumentParser()
 
     # path
-    parser.add_argument('--data', type=str, default='/data/endoscopy_pro/cvc_clinicdb')
-    parser.add_argument('--outdir', type=str, default='/results/p2sam/cvc_clinicdb')
+    parser.add_argument('--data', type=str, default='data/endoscopy_pro/cvc_clinicdb')
+    parser.add_argument('--outdir', type=str, default='results/p2sam/cvc_clinicdb')
     parser.add_argument('--ref-frame', type=int, default=3)
     
     # model    
-    parser.add_argument('--ckpt', type=str, default='/pretrained_weights/kvasir_full_base/checkpoint.pth')
+    parser.add_argument('--ckpt', type=str, default='pretrained_weights/kvasir_full_base/checkpoint.pth')
     parser.add_argument('--sam-type', type=str, default='vit_b')
     parser.add_argument('--encoder-type', type=str, default='timm')
     parser.add_argument('--medsam', action='store_true')

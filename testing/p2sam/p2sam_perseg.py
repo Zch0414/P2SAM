@@ -20,12 +20,12 @@ def get_arguments():
     parser = argparse.ArgumentParser()
 
     # path
-    parser.add_argument('--data', type=str, default='/data/perseg')
-    parser.add_argument('--outdir', type=str, default='/results/p2sam/perseg')
+    parser.add_argument('--data', type=str, default='data/perseg')
+    parser.add_argument('--outdir', type=str, default='results/p2sam/perseg')
     parser.add_argument('--ref-idx', type=str, default='00')
     
     # model
-    parser.add_argument('--ckpt', type=str, default='/pretrained_weights/sam_vit_h.pth')
+    parser.add_argument('--ckpt', type=str, default='pretrained_weights/sam_vit_h.pth')
     parser.add_argument('--sam-type', type=str, default='vit_h')
     parser.add_argument('--guided-attn', action='store_true')
 
@@ -78,7 +78,7 @@ def main():
                 
                 # image path
                 test_idx = '%02d' % test_idx
-                test_image_path = test_images_path + '/' + test_idx + '.jpg'
+                test_image_path = os.path.join(test_images_path, test_idx + '.jpg')
 
                 # forward
                 pred_mask, point_coords, point_labels, dis = p2sam_perseg(args, sam, ref_image_path, ref_mask_path, test_idx, test_image_path, output_path)

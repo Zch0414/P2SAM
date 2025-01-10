@@ -39,7 +39,7 @@ def get_args_parser():
     # Model
     parser.add_argument('--sam-type', default='vit_b', type=str)
     parser.add_argument('--encoder-type', default='timm', type=str)
-    parser.add_argument('--pretrained-weight', default='/pretrained_weights/sam_vit_b.pth', type=str)
+    parser.add_argument('--pretrained-weight', default='pretrained_weights/sam_vit_b.pth', type=str)
 
     ## Parameter-Efficient Fine-Tuning
     parser.add_argument('--lora', action='store_true')
@@ -92,7 +92,7 @@ def get_args_parser():
 
     # Dataset parameters
     parser.add_argument('--dataset', default='kvasir-seg', type=str)
-    parser.add_argument('--dataset-dir', default='/data/endoscopy_pro/kvasir-seg/')
+    parser.add_argument('--dataset-dir', default='data/endoscopy_pro/kvasir-seg/')
     parser.add_argument('--output-dir', default='',
                         help='path where to save, empty for no saving')
     
