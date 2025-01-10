@@ -193,3 +193,5 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --output-dir '${output_dir}'
     --seed 42 
 ```
+
+Note that these hyperparameters have not been carefully tuned. However, the implementation should achieve reasonable results: ~90% Dice score on the Kvasir-SEG dataset and ~65% Dice score on the NSCLC-Radiomics dataset without any human-provided prompts.
