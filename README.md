@@ -29,16 +29,16 @@ conda env create -f environment.yaml
 ```
 
 Prepare datasets with:
-- [Datasets for P<sup>2</sup>SAM](data/README.md)
+- [Datasets](data/README.md)
 
-Download pre-trained weights with:
-- [Models for P<sup>2</sup>SAM](pretrained_weights/README.md)
+Prepare pre-trained and fine-tuned models with:
+- [Models](pretrained_weights/README.md)
 
-Fine-tune SAM with:
-- [Fine-tuning SAM on Customed Dataset](training/README.md)
+Fine-tune SAM on customed datasets with:
+- [Fine-tuning](training/README.md)
 
-Test P<sup>2</sup>SAM with:
-- [Testing P<sup>2</sup>SAM on Out-of-Distribution Dataset](testing/README.md)
+Test P<sup>2</sup>SAM on out-of-distribution datasets with:
+- [Testing](testing/README.md)
 
 ## Acknowledgement
 This repository is built using the 
