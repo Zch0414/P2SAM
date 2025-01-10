@@ -1,4 +1,4 @@
-# Preparing Datasets for P<sup>2</sup>SAM
+# Prepare Datasets for P<sup>2</sup>SAM
 
 Download the 
 [Kvasir-SEG](https://datasets.simula.no/kvasir-seg/), 
