@@ -1,4 +1,4 @@
-## Preparing Datasets for P<sup>2</sup>SAM
+# Preparing Datasets for P<sup>2</sup>SAM
 
 Download the 
 [Kvasir-SEG](https://datasets.simula.no/kvasir-seg/), 
@@ -9,7 +9,7 @@ and [PerSeg](https://drive.google.com/file/d/18TbrwhZtAPY5dlaoEqkPa5h08G9Rjcio/v
 datasets. 
 Organize them as follows:
 
-### Endoscopy Datasets
+## Endoscopy Datasets
 
 **Raw Data**
 ```
@@ -35,7 +35,7 @@ data
 │     └── label/ video*/ *.png
 ```
 
-### NSCLC Datasets
+## NSCLC Datasets
 
 **Raw Data**
 ```
@@ -63,7 +63,7 @@ data
 │     └── label/ *_HM10395/ *.png
 ```
 
-### PerSeg
+## PerSeg
 ```
 data/
 ├── perseg/
