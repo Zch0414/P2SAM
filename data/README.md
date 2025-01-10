@@ -30,7 +30,7 @@ data
 │  ├── kvasir_seg/
 │  │  ├── image/ *.png
 │  │  └── label/ *.png
-│  └── CVC-ClinicDB
+│  └── cvc_clinicdb/
 │     ├── image/ video*/ *.png
 │     └── label/ video*/ *.png
 ```
