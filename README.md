@@ -8,10 +8,10 @@
 ## Overview
 <p align="center"><img src="https://github.com/Zch0414/p2sam/blob/master/figures/intro.jpg" width=96% height=96% class="center"></p>
 
-We propose P<sup>2</sup>SAM, a training-free method that adapts a promptable segmentation model to new patients using only on one-shot patient-specific data. 
+We propose P<sup>2</sup>SAM, a training-free method that adapts a promptable segmentation model to new patients using only one-shot patient-specific data. 
 P<sup>2</sup>SAM incorporates a **part-aware prompt mechanism** and a **distribution-based retrieval approach** to enhance generalization across:
 
-- **Tasks:** P<sup>2</sup>SAM enhances performance across different patient-specific segmentation tasks.
+- **Tasks:** P<sup>2</sup>SAM enhances generalization across different patient-specific segmentation tasks.
 - **Models:** P<sup>2</sup>SAM can be plugged into various promptable segmentation models, such as SAM, fine-tuned SAM, and SAM 2.
 - **Domains:** P<sup>2</sup>SAM performs effectively in both medical and natural image domains.
 
