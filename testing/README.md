@@ -1,6 +1,11 @@
-# Test P<sup>2</sup>SAM on the 4D-Lung, CVC-ClinicDB, PerSeg datasets.
+# Test P<sup>2</sup>SAM
 
-## 4D-Lung
+Test P<sup>2</sup>SAM for 
+adaptive radiation segmentation on the 4D-Lung dataset, 
+endoscopy video segmentation on the CVC-ClinicDB dataset, 
+peronalized segmentation on the PerSeg datasets.
+
+## Adaptive Radiation Segmentation on 4D-Lung
 
 **Direct-transfer Baseline**
 
@@ -28,7 +33,7 @@ python /p2sam/p2sam_4d_lung.py\
   --min-num-neg 1
 ```
 
-## CVC-ClinicDB
+## Endoscopy Video Segmentation on CVC-ClinicDB
 
 **Direct-transfer Baseline**
 
@@ -54,4 +59,17 @@ python /p2sam/p2sam_cvc_clinicdb.py\
   --min-num-pos 1\
   --max-num-neg 1\
   --min-num-neg 1
+```
+
+## Personalized Segmentation on PerSeg
+
+```
+python /p2sam/p2sam_perseg.py\
+  --data 'data/perseg'\
+  --outdir 'results/p2sam/perseg'\
+  --ckpt 'pretrained_weights/sam_vit_h.pth'\
+  --sam-type 'vit_h'\
+  -- guided-attn \
+  --max-num-pos 5\
+  --min-num-pos 1
 ```
