@@ -9,7 +9,7 @@ We provide an implementation to fine-tune SAM on custom datasets, adhering close
 ```
 python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 4\      
     --epochs 36\
     --lr 1e-4\
@@ -20,9 +20,9 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --weight-decay 0.01\
     --warmup-epochs 4\
     --cooldown-epochs 0\
-    --dataset 'nsclc-radiomics'
-    --data-dir 'data/lung_pro/nsclc_radiomics/'
-    --output-dir '${output_dir}'
+    --dataset 'nsclc-radiomics'\
+    --data-dir 'data/lung_pro/nsclc_radiomics/'\
+    --output-dir '${output_dir}'\
     --seed 42 
 ```
 
@@ -31,7 +31,7 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
 ```
 python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 4\      
     --epochs 36\
     --lr 1e-4\
@@ -44,9 +44,9 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --weight-decay 0.01\
     --warmup-epochs 4\
     --cooldown-epochs 0\
-    --dataset 'nsclc-radiomics'
-    --data-dir 'data/lung_pro/nsclc_radiomics/'
-    --output-dir '${output_dir}'
+    --dataset 'nsclc-radiomics'\
+    --data-dir 'data/lung_pro/nsclc_radiomics/'\
+    --output-dir '${output_dir}'\
     --seed 42 
 ```
 
@@ -55,7 +55,7 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
 ```
 python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 2\      
     --epochs 36\
     --lr 1e-4\
@@ -66,9 +66,9 @@ python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
     --weight-decay 0.01\
     --warmup-epochs 4\
     --cooldown-epochs 0\
-    --dataset 'nsclc-radiomics'
-    --data-dir 'data/lung_pro/nsclc_radiomics/'
-    --output-dir '${output_dir}'
+    --dataset 'nsclc-radiomics'\
+    --data-dir 'data/lung_pro/nsclc_radiomics/'\
+    --output-dir '${output_dir}'\
     --seed 42 
 ```
 
@@ -77,7 +77,7 @@ python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
 ```
 python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 4\      
     --epochs 36\
     --lr 1e-4\
@@ -90,9 +90,9 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --weight-decay 0.01\
     --warmup-epochs 4\
     --cooldown-epochs 0\
-    --dataset 'nsclc-radiomics'
-    --data-dir 'data/lung_pro/nsclc_radiomics/'
-    --output-dir '${output_dir}'
+    --dataset 'nsclc-radiomics'\
+    --data-dir 'data/lung_pro/nsclc_radiomics/'\
+    --output-dir '${output_dir}'\
     --seed 42 
 ```
 
@@ -103,7 +103,7 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
 ```
 python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 4\      
     --epochs 100\
     --lr 1e-4\
@@ -115,9 +115,9 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --warmup-epochs 10\
     --cooldown-epochs 0\
     --sched-on-updates \
-    --dataset 'kvasir-seg'
-    --data-dir 'data/endoscopy_pro/kvasir_seg/'
-    --output-dir '${output_dir}'
+    --dataset 'kvasir-seg'\
+    --data-dir 'data/endoscopy_pro/kvasir_seg/'\
+    --output-dir '${output_dir}'\
     --seed 42 
 ```
 
@@ -126,7 +126,7 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
 ```
 python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 4\      
     --epochs 100\
     --lr 1e-4\
@@ -141,8 +141,8 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
     --cooldown-epochs 0\
     --sched-on-updates \
     --dataset 'kvasir-seg'
-    --data-dir 'data/endoscopy_pro/kvasir_seg/'
-    --output-dir '${output_dir}'
+    --data-dir 'data/endoscopy_pro/kvasir_seg/'\
+    --output-dir '${output_dir}'\
     --seed 42 
 ```
 
@@ -151,7 +151,7 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env main.py\
 ```
 python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 2\      
     --epochs 100\
     --lr 1e-4\
@@ -163,9 +163,9 @@ python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
     --warmup-epochs 10\
     --cooldown-epochs 0\
     --sched-on-updates \
-    --dataset 'kvasir-seg'
-    --data-dir 'data/endoscopy_pro/kvasir_seg/'
-    --output-dir '${output_dir}'
+    --dataset 'kvasir-seg'\
+    --data-dir 'data/endoscopy_pro/kvasir_seg/'\
+    --output-dir '${output_dir}'\
     --seed 42
 ```
 
@@ -174,7 +174,7 @@ python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
 ```
 python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
     --online-record \
-    --name '${run_name}'
+    --name '${run_name}'\
     --batch-size 2\      
     --epochs 100\
     --lr 1e-4\
@@ -188,9 +188,9 @@ python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py\
     --warmup-epochs 10\
     --cooldown-epochs 0\
     --sched-on-updates \
-    --dataset 'kvasir-seg'
-    --data-dir 'data/endoscopy_pro/kvasir_seg/'
-    --output-dir '${output_dir}'
+    --dataset 'kvasir-seg'\
+    --data-dir 'data/endoscopy_pro/kvasir_seg/'\
+    --output-dir '${output_dir}'\
     --seed 42 
 ```
 
