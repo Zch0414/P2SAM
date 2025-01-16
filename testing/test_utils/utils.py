@@ -191,19 +191,22 @@ def run_medical(args, sam, test_image_path, test_mask_path, output_path, slice_n
     # Load test image and test mask
     test_image = cv2.imread(test_image_path)
     test_image = cv2.cvtColor(test_image, cv2.COLOR_BGR2RGB)
-    test_mask = cv2.imread(test_mask_path, cv2.IMREAD_GRAYSCALE)       
-    test_mask = test_mask - (test_mask.max()+test_mask.min()) / 2.0
-    test_mask = (test_mask > 0.0).astype(np.float)
+    if test_mask_path is not None:
+        test_mask = cv2.imread(test_mask_path, cv2.IMREAD_GRAYSCALE)       
+        test_mask = test_mask - (test_mask.max()+test_mask.min()) / 2.0
+        test_mask = (test_mask > 0.0).astype(np.float)
+    else:
+        test_mask = None
 
     # get test point and box
-    if args.box:
+    if args.box and test_mask is not None:
         test_mask_tensor = torch.Tensor(test_mask).unsqueeze(0).unsqueeze(0)
         test_box_tensor = batched_mask_to_box(test_mask_tensor)
         test_box_numpy = test_box_tensor.squeeze(0).cpu().numpy()
     else:
         test_box_numpy = None
     
-    if args.point:
+    if args.point and test_mask is not None:
         test_mask_tensor = torch.Tensor(test_mask).unsqueeze(0).unsqueeze(0)
         mask_preds = torch.zeros_like(test_mask_tensor)
         point_coords, point_values = batched_mask_to_point(test_mask_tensor, mask_preds, num_points=1)
@@ -231,7 +234,9 @@ def run_medical(args, sam, test_image_path, test_mask_path, output_path, slice_n
     mask_colors[final_mask, :] = np.array([[0, 0, 128]])
     mask_output_path = os.path.join(output_path, slice_name + '.png')
     cv2.imwrite(mask_output_path, mask_colors)
-    return final_mask, compute_dice(final_mask, test_mask)
+
+    dice_score = compute_dice(final_mask, test_mask) if test_mask is not None else None
+    return final_mask, dice_score
 
 
 # p2sam for medical
@@ -266,9 +271,12 @@ def p2sam_medical(args, sam, ref_image_path, ref_mask_path, test_image_path, tes
     # Load test image and test mask (only used for Dice score)
     test_image = cv2.imread(test_image_path)
     test_image = cv2.cvtColor(test_image, cv2.COLOR_BGR2RGB)
-    test_mask = cv2.imread(test_mask_path, cv2.IMREAD_GRAYSCALE)
-    test_mask = test_mask - (test_mask.max()+test_mask.min()) / 2.0
-    test_mask = (test_mask > 0.0).astype(np.float)
+    if test_mask_path is not None:
+        test_mask = cv2.imread(test_mask_path, cv2.IMREAD_GRAYSCALE)
+        test_mask = test_mask - (test_mask.max()+test_mask.min()) / 2.0
+        test_mask = (test_mask > 0.0).astype(np.float)
+    else:
+        test_mask = None
 
     # Image feature encoding
     predictor.set_image(test_image, medsam=args.medsam)
@@ -445,7 +453,8 @@ def p2sam_medical(args, sam, ref_image_path, ref_mask_path, test_image_path, tes
     mask_output_path = os.path.join(output_path, slice_name + '.png')
     cv2.imwrite(mask_output_path, mask_colors)
 
-    return final_mask, final_point_coords, final_point_labels, compute_dice(final_mask, test_mask), best_reg_score
+    dice_score = compute_dice(final_mask, test_mask) if test_mask is not None else None
+    return final_mask, final_point_coords, final_point_labels, dice_score, best_reg_score
 
 
 # p2sam for perseg
