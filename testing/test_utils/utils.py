@@ -4,16 +4,13 @@ import cv2
 import sys
 sys.path.append('./')
 import numpy as np
-import matplotlib.pyplot as plt
 
 from sklearn.cluster import KMeans
 
 import torch
 from torch.nn import functional as F
-from torchvision.ops import sigmoid_focal_loss as compute_focal_loss
-from monai.losses import DiceLoss
 
-from .custom_segment_anything import SamPredictor, SamPredictorTr
+from .custom_segment_anything import SamPredictor
 
 
 def point_selection(mask_sim, topk=1):
